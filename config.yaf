@@ -1,0 +1,212 @@
+<yaf>
+    
+
+
+    <globals background="0 0 0 0" drawmode="fill" shading="flat" cullface="back" cullorder="CCW" />
+    
+    <cameras initial="player1">
+        <perspective id="player1" near="0.1" far="500" angle="45" pos="0 30 13" target="0 0.5 0" />
+        <perspective id="player2" near="0.1" far="500" angle="45" pos="0 30 -13" target="0 0.5 0" />
+        <perspective id="side1" near="0.1" far="500" angle="45" pos="20 20 0" target="0 0.5 0" />
+        <perspective id="side2" near="0.1" far="500" angle="45" pos="-20 20 0" target="0 0.5 0" />
+        <perspective id="menu" near="0.1" far="500" angle="45" pos="5 15 10" target="-7 0.5 0" />
+        <ortho id="ortho" near="0.1" far="200" left="-20" right="20" top="20" bottom="-20" />
+        
+    </cameras>
+    
+    <lighting doublesided="true" local="true" enabled="true" ambient="1 1 1 1" >
+        <omni id="omni1" enabled="true"
+        location="-5 5 -5"
+        ambient="0.3 0.3 0.3 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.5 0.5 0.5 1"
+        />
+        <omni id="omni2" enabled="true"
+        location="5 5 5"
+        ambient="0.3 0.3 0.3 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.5 0.5 0.5 1"
+        />
+        <omni id="omni3" enabled="true"
+        location="-5 5 5"
+        ambient="0.3 0.3 0.3 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.5 0.5 0.5 1"
+        />
+        <omni id="omni4" enabled="true"
+        location="5 5 -5"
+        ambient="0.3 0.3 0.3 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.5 0.5 0.5 1"
+        />
+        
+    </lighting>
+    
+    <textures>
+        <texture id="board0" file="0emergoboard.png" />
+        <texture id="board1" file="1emergoboard.png" />
+        <texture id="board2" file="2emergoboard.png" />
+        <texture id="black" file="black.png" />
+        <texture id="white" file="white.png" />
+    </textures>
+    
+    <appearances>
+        
+        <appearance id="floor"
+        emissive="0 0 0 1"
+        ambient="0.5 0.5 0.5 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.5 0.5 0.5 1"
+        shininess="0"
+        textureref="board0"
+        texlength_s="1"
+        texlength_t="1"/>
+        
+        <appearance id="box"
+        emissive="0 0 0 1"
+        ambient="0.5 0.5 0.5 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0 0 0 1"
+        shininess="128"
+        textureref="box"
+        texlength_s="1"
+        texlength_t="1"/>
+    </appearances>
+	
+	<animations>
+		<animation id="cubo" span="20" type="linear">
+            <controlpoint xx="0.5" yy="1.75" zz="2.5" /> 
+			<controlpoint xx="1.0" yy="2.0" zz="2.5" />    
+			<controlpoint xx="1.5" yy="1.75" zz="2.5" />			
+			<controlpoint xx="2.0" yy="2.0" zz="2.5" />
+			<controlpoint xx="2.5" yy="1.75" zz="2.5" />
+			<controlpoint xx="3.0" yy="1.75" zz="2.5" />
+		</animation>
+	</animations>
+	
+    <graph rootid="scene">
+        
+        <node id="scene">
+            <transforms>
+            </transforms>
+            
+            <appearanceref id="floor" />
+            
+            <children>
+                <noderef id="board" />
+            </children>
+        </node>
+            
+        <node id="board">
+            <transforms>
+                <translate to="0 -0.55 0" />
+            </transforms>
+            
+            <appearanceref id="floor" />
+            
+            <children>
+                <noderef id="table" />
+                <noderef id="stack" />
+            </children>
+        </node>
+
+        <node id="table">
+            <transforms>
+                <scale factor="18.5 1 18.5" />
+            </transforms>
+            
+            <children>
+                <noderef id="cube" />
+            </children>
+        </node>
+
+        <node id="cube">
+            <transforms>
+            </transforms>
+            
+            <children>
+                <noderef id="face1"/>
+                <noderef id="face2"/>
+                <noderef id="face3"/>
+                <noderef id="face4"/>
+                <noderef id="face5"/>
+                <noderef id="face6"/>
+            </children>
+        </node>
+	
+       <node id="face1">
+            <transforms>
+                <translate to="0 0 -0.5" />
+                <rotate axis="y" angle="180" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+        
+        <node id="face2">
+            <transforms>
+                <translate to="0 0 0.5" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+        
+        <node id="face3">
+            <transforms>
+                <translate to="0 -0.5 0" />
+                <rotate axis="x" angle="90" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+        
+        <node id="face4">
+            <transforms>
+                <translate to="0 0.5 0" />
+                <rotate axis="x" angle="-90" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+        
+        <node id="face5">
+            <transforms>
+                <translate to="-0.5 0 0" />
+                <rotate axis="y" angle="-90" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+        
+        <node id="face6">
+            <transforms>
+                <translate to="0.5 0 0" />
+                <rotate axis="y" angle="90" />
+            </transforms>
+            
+            <children>
+                <noderef id="rect" />
+            </children>
+        </node>
+                
+        <node id="rect">
+            <transforms>
+            </transforms>
+            
+            <children>
+                <rectangle xy1="-0.5 -0.5" xy2="0.5 0.5" />
+            </children>
+        </node>
+
+    </graph>
+</yaf>
