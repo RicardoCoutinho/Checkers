@@ -4,7 +4,7 @@ The following project was developed for the Computer Graphics Lab class of LAIG 
 The project's purpose is to develop skills in C++ and OpenGL.
 
 ## Collaborators
-Ricardo Coutinho.
+[Daniel Nunes][1] and Ricardo Coutinho.
 
 ## License
 MIT
@@ -19,6 +19,7 @@ The Checkers board-game developed in C++ programming language and playable via s
 ##### About the game
 > Checkers dates back to the 12th century, in France. Later, maybe in 1535, a new rule was added: when a player can jump, he must jump. No single inventor is known for this ancient game, although Arthur L. Samuel was the first to create a checkers computer game in 1952.
 
-More about this [here][1]!
+More about this [here][2]!
 
-[1]:https://simple.wikipedia.org/wiki/Checkers
+[1]:https://
+[2]:https://simple.wikipedia.org/wiki/Checkers
