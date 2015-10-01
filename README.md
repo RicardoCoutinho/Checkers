@@ -1,4 +1,4 @@
-# LAIG
+# Checkers
 The following project was developed for the Computer Graphics Lab class of LAIG in the Faculty of Engineering and University of Porto(FEUP).
 
 The project's purpose is to develop skills in C++ and OpenGL.
