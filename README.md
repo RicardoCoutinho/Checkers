@@ -3,6 +3,8 @@ The following project was developed for the Computer Graphics Lab class of LAIG 
 
 The project's purpose is to develop skills in C++ and OpenGL.
 
+Basically, it's a 3D board-game.
+
 ## Collaborators
 [Daniel Nunes][1] and Ricardo Coutinho.
 
